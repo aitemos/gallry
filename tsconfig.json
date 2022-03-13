@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "components/imagegrid.tsx", "firebase/firebase.js"  ],
   "exclude": [
     "node_modules"
   ]
