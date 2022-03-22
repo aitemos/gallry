@@ -1,7 +1,5 @@
+import { initializeApp } from "firebase/app";
 import * as firebase from 'firebase/app';
-import 'firebase/storage';
-import 'firebase/firestore';
-
 const firebaseConfig = {
   apiKey: "AIzaSyDnFNCZW8RbUnZ6aJbDmTo3TYQFBHoKh2M",
   authDomain: "gallery-9e321.firebaseapp.com",
@@ -11,7 +9,7 @@ const firebaseConfig = {
   appId: "1:346039256624:web:854f46a4824d3b35314ff5"
 };
 
-export const app = initializeApp(firebaseConfig);
+firebase = initializeApp(firebaseConfig);
+export default firebase;
 
- 
  

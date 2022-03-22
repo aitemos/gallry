@@ -1,7 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
-import { Header, Images, Sidebar,Footer } from '../components'
+import { Header, Images, Sidebar,Footer} from '../components'
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
@@ -17,8 +16,8 @@ const Home: NextPage = () => {
         <Header/>
       
       <main className={styles.main}style={{padding:'20px 0px 0px 0px',textAlign:'center',display:'block'}}>
-       <Images/>
        
+       <Images/>
        
       </main>
       <Footer/>

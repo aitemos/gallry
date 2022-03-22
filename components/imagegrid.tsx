@@ -2,7 +2,7 @@
 import React, { useState, FC, useEffect,  } from "react";
 import ReactDOM from 'react-dom';
 import {BigImage, BigImageDiv, Image} from "../styled-components/styledcomps";
-import {useFirestore} from '../hooks/useFirestore';
+
 import {images} from './images';
 import { render } from "react-dom";
 
