@@ -3,7 +3,8 @@ import { gql } from "apollo-server-micro";
 export const queries = gql`
   type Query {
     users: [User!]!
-    locales: [LOCALE!]!    
+    locales: [LOCALE!]!  
+    images:[Image!]!  
   }
  
   type User {
@@ -17,7 +18,14 @@ export const queries = gql`
   enum LOCALE {
    CS
    EN
-  }`
+  }
+  type Image{
+  id: ID!
+  src: String!
+  text:String
+  }
+  `
+  
 ;
 
  

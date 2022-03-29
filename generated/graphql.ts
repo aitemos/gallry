@@ -19,6 +19,12 @@ export type Scalars = {
   Float: number;
 };
 
+export type Image = {
+  readonly id: Scalars['ID'];
+  readonly src: Scalars['String'];
+  readonly text?: Maybe<Scalars['String']>;
+};
+
 export enum Locale {
   CS = 'CS',
   EN = 'EN'
@@ -34,6 +40,7 @@ export type MutationUpdateProfileArgs = {
 };
 
 export type Query = {
+  readonly images: ReadonlyArray<Image>;
   readonly locales: ReadonlyArray<Locale>;
   readonly users: ReadonlyArray<User>;
 };
@@ -51,41 +58,45 @@ export type User = {
   readonly picture?: Maybe<Scalars['String']>;
 };
 
-export type LocalesQueryVariables = Exact<{ [key: string]: never; }>;
+export type ImagesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type LocalesQuery = { readonly __typename: 'Query', readonly locales: ReadonlyArray<Locale> };
+export type ImagesQuery = { readonly __typename: 'Query', readonly images: ReadonlyArray<{ readonly __typename: 'Image', readonly id: string, readonly src: string, readonly text?: string | null | undefined }> };
 
 
-export const LocalesDocument = gql`
-    query locales {
-  locales
+export const ImagesDocument = gql`
+    query images {
+  images {
+    id
+    src
+    text
+  }
 }
     `;
 
 /**
- * __useLocalesQuery__
+ * __useImagesQuery__
  *
- * To run a query within a React component, call `useLocalesQuery` and pass it any options that fit your needs.
- * When your component renders, `useLocalesQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * To run a query within a React component, call `useImagesQuery` and pass it any options that fit your needs.
+ * When your component renders, `useImagesQuery` returns an object from Apollo Client that contains loading, error, and data properties
  * you can use to render your UI.
  *
  * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
  *
  * @example
- * const { data, loading, error } = useLocalesQuery({
+ * const { data, loading, error } = useImagesQuery({
  *   variables: {
  *   },
  * });
  */
-export function useLocalesQuery(baseOptions?: Apollo.QueryHookOptions<LocalesQuery, LocalesQueryVariables>) {
+export function useImagesQuery(baseOptions?: Apollo.QueryHookOptions<ImagesQuery, ImagesQueryVariables>) {
         const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<LocalesQuery, LocalesQueryVariables>(LocalesDocument, options);
+        return Apollo.useQuery<ImagesQuery, ImagesQueryVariables>(ImagesDocument, options);
       }
-export function useLocalesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<LocalesQuery, LocalesQueryVariables>) {
+export function useImagesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<ImagesQuery, ImagesQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<LocalesQuery, LocalesQueryVariables>(LocalesDocument, options);
+          return Apollo.useLazyQuery<ImagesQuery, ImagesQueryVariables>(ImagesDocument, options);
         }
-export type LocalesQueryHookResult = ReturnType<typeof useLocalesQuery>;
-export type LocalesLazyQueryHookResult = ReturnType<typeof useLocalesLazyQuery>;
-export type LocalesQueryResult = Apollo.QueryResult<LocalesQuery, LocalesQueryVariables>;
+export type ImagesQueryHookResult = ReturnType<typeof useImagesQuery>;
+export type ImagesLazyQueryHookResult = ReturnType<typeof useImagesLazyQuery>;
+export type ImagesQueryResult = Apollo.QueryResult<ImagesQuery, ImagesQueryVariables>;
