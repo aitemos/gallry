@@ -18,11 +18,12 @@ export const queries = gql`
   enum LOCALE {
    CS
    EN
+   RU
   }
   type Image{
   id: ID!
   src: String!
-  text:String
+  text: String!
   }
   `
   

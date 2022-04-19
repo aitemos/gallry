@@ -62,32 +62,31 @@ export const Ul = styled.ul`padding:0;margin:0;`;
 export const StyledHeader = styled.header`position:relative;background:black; height:${headerheight};`;
 
 export const Image = styled.img<ImageProps>` 
-            position:relative;
-            z-index: 0;
-             padding:0; margin:10px;min-height:150px;
-             height:15vw;text-align:center;
-             border: 4px solid turquoise; 
-             border-radius:20px 0px 20px 0px;
-             &:hover{border-radius:0px 20px 0px 20px;border: 4px solid rgb(140, 0, 255); }
-            transition:0.5s;src:${(props) => (props.src)};`;
+            padding:0; margin:10px;
+            width: 100%;
+            min-width: 150px;
+            //border: 4px solid turquoise; 
+             //border-radius:20px 0px 20px 0px;
+             //&:hover{border-radius:0px 20px 0px 20px;border: 4px solid rgb(140, 0, 255); }
+             //transition:0.5s;
+             src:${(props) => (props.src)};`;
         
 export const BigImage = styled.img<ImageProps>`
-            padding:0; margin:10px;
             height:45vw;
-            min-height:150px;
-            text-align:center;
-            border: 4px solid turquoise; 
-            border-radius:20px 20px 20px 20px;
-            transition:0s;
-            src:${(props) => (props.src)};
-            transition:1s;
+            position: absolute;
             margin: auto;
             left: 0;
             right: 0;
-            top: 0;
-            bottom: 0;`;
-export const BigImageDiv = styled.div<BigImageProps>`z-index:${(props) => (props.show?2 :-1)};
-    display:${(props) => (props.show?'contents':'none')};`;
+           // text-align: center;
+            min-height:150px;
+           // border: 4px solid turquoise; 
+           // border-radius:20px 20px 20px 20px;
+           // transition:0s;
+           // src:${(props) => (props.src)};
+           // transition:1s;
+            //top: 0;
+            //bottom: 0;
+            `;
 export const H1 = styled.h1`font-size:50px;
                             animation-name:${KeyFrames};
                             animation-duration: 8s;
@@ -96,11 +95,20 @@ export const H1 = styled.h1`font-size:50px;
                             text-align:center;
                             margin:auto;
                             color:white;`;
-export const StyledFooter = styled.footer`position:relative;
+export const StyledFooter = styled.footer`//position:relative;
                                           background:black;
                                           height:${headerheight};
                                           color:white;
                                           text-align:center;`
+export const ImageGrid = styled.div`
+                                    text-align: center;
+                                    padding-left:20px;
+                                    padding-right:20px;
+                                    column-count: 4;
+                                    
+                                    `;
+export const BigImageDiv = styled.div`text-align:center;
+                                      `;
 
 
 

@@ -15,7 +15,7 @@ const Home: NextPage = () => {
       
         <Header/>
       
-      <main className={styles.main}style={{padding:'20px 0px 0px 0px',textAlign:'center',display:'block'}}>
+      <main className={styles.main} id="main" style={{padding:'20px 0px 0px 0px',textAlign:'center',display:'block'}}>
        
        <Images/>
        

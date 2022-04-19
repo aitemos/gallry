@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "components/imagegrid.tsx", "firebase/firebaseConfig.ts", "firebase/firebaseQuery.ts", "firebase/imageQuery.tsx"  ],
+, "components/imagegrid.tsx", "firebase/firebaseConfig.ts", "firebase/firebaseQuery.ts", "firebase/imageQuery.tsx", "firebase/imageQuery.js"  ],
   "exclude": [
     "node_modules"
   ]

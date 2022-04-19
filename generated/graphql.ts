@@ -22,12 +22,13 @@ export type Scalars = {
 export type Image = {
   readonly id: Scalars['ID'];
   readonly src: Scalars['String'];
-  readonly text?: Maybe<Scalars['String']>;
+  readonly text: Scalars['String'];
 };
 
 export enum Locale {
   CS = 'CS',
-  EN = 'EN'
+  EN = 'EN',
+  RU = 'RU'
 }
 
 export type Mutation = {
@@ -61,7 +62,7 @@ export type User = {
 export type ImagesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type ImagesQuery = { readonly __typename: 'Query', readonly images: ReadonlyArray<{ readonly __typename: 'Image', readonly id: string, readonly src: string, readonly text?: string | null | undefined }> };
+export type ImagesQuery = { readonly __typename: 'Query', readonly images: ReadonlyArray<{ readonly __typename: 'Image', readonly id: string, readonly src: string, readonly text: string }> };
 
 
 export const ImagesDocument = gql`
