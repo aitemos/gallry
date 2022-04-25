@@ -12,17 +12,6 @@ type ImageProps = {
   src: string;
   
 }
-var headerheight = '100px';
-export const SideBar = styled.div<SideBarProps>`position:absolute;
-left:0;
-top: ${headerheight};
-bottom:0;
-border-right: 3px solid red;
-transition: all 0.5s ease;
-background: ${(props) => (props.isOpened ? 'red' : props.color)};
-width: ${(props) => (props.isOpened ? props.Size : '50px')};
-`;
-
 const KeyFrames = keyframes`
   0%{
       color: turquoise;
@@ -54,12 +43,27 @@ const KeyFrames = keyframes`
      color: turquoise;
   }
 `
+var headerheight = '100px';
+export const SideBar = styled.div<SideBarProps>`position:absolute;
+top: ${headerheight};
+border-right: 3px solid red;
+transition: all 0.5s ease;
+bottom: 0%;
+background: ${(props) => (props.isOpened ? 'black' : props.color)};
+width: ${(props) => (props.isOpened ? props.Size : '1.9%')};
+color: white;
+`;
+
+
 
 export const Li = styled.li`list-style: none;padding:10px 0px 10px 10px;border-bottom: 2px solid white;`;
 
 export const Ul = styled.ul`padding:0;margin:0;`;
 
-export const StyledHeader = styled.header`position:relative;background:black; height:${headerheight};`;
+export const StyledHeader = styled.header`position:relative;
+background:black;
+ height:${headerheight};
+ border-bottom: 3px solid red;`;
 
 export const Image = styled.img<ImageProps>` 
             padding:0; margin:10px;
@@ -100,6 +104,7 @@ export const StyledFooter = styled.footer`//position:relative;
                                           height:${headerheight};
                                           color:white;
                                           text-align:center;`
+                                          
 export const ImageGrid = styled.div`
                                     text-align: center;
                                     padding-left:20px;
@@ -109,6 +114,12 @@ export const ImageGrid = styled.div`
                                     `;
 export const BigImageDiv = styled.div`text-align:center;
                                       `;
+export const PP = styled.p`text-align:center; position: absolute;
+margin: auto;
+left: 0;
+right: 0;`;
+                                    
+                              
 
 
 

@@ -33,11 +33,17 @@ export enum Locale {
 
 export type Mutation = {
   readonly updateProfile?: Maybe<User>;
+  readonly uploadImage?: Maybe<Image>;
 };
 
 
 export type MutationUpdateProfileArgs = {
   input: UpdateProfileInput;
+};
+
+
+export type MutationUploadImageArgs = {
+  input: UploadImageInput;
 };
 
 export type Query = {
@@ -49,6 +55,12 @@ export type Query = {
 export type UpdateProfileInput = {
   readonly locale?: InputMaybe<Locale>;
   readonly name?: InputMaybe<Scalars['String']>;
+};
+
+export type UploadImageInput = {
+  readonly id?: InputMaybe<Scalars['String']>;
+  readonly src?: InputMaybe<Scalars['String']>;
+  readonly text?: InputMaybe<Scalars['String']>;
 };
 
 export type User = {

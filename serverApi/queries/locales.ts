@@ -17,7 +17,7 @@ const ensureLocales = async () => {
     const col = getCollection<LocaleEntity>('locales')  
     await col.add({code: Locale.CS, disabled: false});
     await col.add({code: Locale.EN, disabled: false});
-    await col.add({code: Locale.RU, disabled: true});
+    await col.add({code: Locale.RU, disabled: false});
   }
   
 }
