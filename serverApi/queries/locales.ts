@@ -21,7 +21,8 @@ const ensureLocales = async () => {
   }
   
 }
-export const locales = async (_parent: any, _args: any, _context: any) : Promise<Locale[]> => {
+export const locales = async (_parent: any, _args: any, context: any) : Promise<Locale[]> => {
+  console.log(context)
   await ensureLocales();
   const query = await getCollection<LocaleEntity>('locales').where('disabled','==', false);
   const snapshot = await query.get();

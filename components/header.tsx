@@ -1,6 +1,13 @@
-import React, { useState, FC, useEffect } from "react";
-import { H1, StyledHeader } from "../styled-components/styledcomps";
-export const Header : FC = ()=>{
-    const div = <StyledHeader><H1>GALLERY</H1></StyledHeader>;
-    return div;
-}
+import React, { FC } from 'react';
+
+import { H1, StyledHeader } from '../styled-components/styledcomps';
+import { Sidebar } from './index';
+
+export const Header: FC = () => {
+  return (
+    <StyledHeader>
+      <H1>GALLERY</H1>
+      <Sidebar />
+    </StyledHeader>
+  );
+};

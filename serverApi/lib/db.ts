@@ -1,5 +1,6 @@
-import * as admin from 'firebase-admin';
+import * as admin from "firebase-admin";
 import { getFirestore } from 'firebase-admin/firestore';
+//const {Storage} = require('@google-cloud/storage')
 
 const createApp = ()=>{
     var serviceAccount = require("../firebase.config.json");
@@ -10,7 +11,7 @@ const createApp = ()=>{
     databaseURL: "https://gallery-9e321-default-rtdb.europe-west1.firebasedatabase.app",
   });
 }
-
+// storage = new Storage({keyFilename: '../firebase.config.json'});
 export const getApp = () => {
   try{
     admin.instanceId()
@@ -24,9 +25,13 @@ export const getApp = () => {
 export const db = () => {
   return getFirestore(getApp());
 } 
-export const bucket = ()=>{
-  return admin.storage().bucket("gs://gallery-9e321.appspot.com");
-}
+/*export const storageRef = storage.createBucket("galleradminy-9e321.appspot.com");
+export const uploadFile= (path, filename)=> {
+  storage.bucket("galleradminy-9e321.appspot.com").upload(path, {
+    destination: filename,
+  });
+
+}*/
 export const getCollection = <T>(colName: string) => {
   return db().collection(colName) as FirebaseFirestore.CollectionReference<T>;
 };

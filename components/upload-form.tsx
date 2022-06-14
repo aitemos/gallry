@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
-import { bucket } from '../serverApi/lib/db';
+ import { storageRef,uploadFile } from '../serverApi/lib/db';
 
-const UploadForm = () => {
+ export const UploadForm = () => {
   const [file, setFile] = useState(null);
   const [error, setError] = useState(null);
 
@@ -9,10 +8,12 @@ const UploadForm = () => {
 
   const handleChange = (e) => {
     let selected = e.target.files[0];
-
+      
     if (selected && types.includes(selected.type)) {
       setFile(selected);
-      
+        const imageDoc = file;
+       const imageDocUrl = URL.createObjectURL(imageDoc)
+        uploadFile(imageDocUrl,file)
       setError('');
     } else {
       setFile(null);
@@ -32,6 +33,4 @@ const UploadForm = () => {
       </div>
     </form>
   );
-}
-
-export default UploadForm;
+} 

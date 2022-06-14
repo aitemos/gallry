@@ -4,11 +4,13 @@ export type Image = {
     id:string;
     src:string;
     text:string;
+    user:string;
 }
 
 type ImageEntity = {
   text: string,
-  src: string
+  src: string,
+  user:string
 }
 /*const ensureImages = async () => {
   const collectionsNames = (await db().listCollections()).map(col => col.id);

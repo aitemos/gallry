@@ -24,6 +24,7 @@ export const queries = gql`
   id: ID!
   src: String!
   text: String!
+  user: String! 
   }
   `
   

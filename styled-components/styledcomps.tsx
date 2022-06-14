@@ -10,7 +10,9 @@ type BigImageProps = {
 }
 type ImageProps = {
   src: string;
-  
+}
+type InputProps = {
+  type: string;
 }
 const KeyFrames = keyframes`
   0%{
@@ -43,15 +45,50 @@ const KeyFrames = keyframes`
      color: turquoise;
   }
 `
+const KeyFrames2 = keyframes`
+  0%{
+      background-color: turquoise;
+      
+  }
+  12.5%{
+     background-color: rgb(64, 75, 224);
+  }
+  25%{
+    background-color: rgb(140, 0, 255);
+   }
+  37.5%{
+    background-color:rgb(212, 0, 255) ;
+  }
+  50%{
+    background-color: rgb(255, 0, 128);
+      
+  }
+  62.5%{
+    background-color: rgb(212, 0, 255);
+  }
+  75%{
+    background-color: rgb(140, 0, 255);
+  }
+  87.2%{
+    background-color: rgb(64, 75, 224);
+  }
+  100%{
+    background-color: turquoise;
+  }
+`
 var headerheight = '100px';
 export const SideBar = styled.div<SideBarProps>`position:absolute;
-top: ${headerheight};
-border-right: 3px solid red;
+bottom: ${(props) => (props.isOpened ? '' : '0%')};
 transition: all 0.5s ease;
-bottom: 0%;
+right:10%;
+border:${(props) => (props.isOpened ? 'red solid 3px' : '0%')};
+text-align: center;
 background: ${(props) => (props.isOpened ? 'black' : props.color)};
-width: ${(props) => (props.isOpened ? props.Size : '1.9%')};
+width: ${(props) => (props.isOpened ? props.Size : '20px')};
+height: ${(props) => (props.isOpened ? props.Size : '20px')};
 color: white;
+padding: ${(props) => (props.isOpened ? '15px' : '0')};;
+z-index: 99;
 `;
 
 
@@ -76,8 +113,7 @@ export const Image = styled.img<ImageProps>`
              src:${(props) => (props.src)};`;
         
 export const BigImage = styled.img<ImageProps>`
-            height:45vw;
-            position: absolute;
+            max-height:40vw;
             margin: auto;
             left: 0;
             right: 0;
@@ -112,12 +148,43 @@ export const ImageGrid = styled.div`
                                     column-count: 4;
                                     
                                     `;
-export const BigImageDiv = styled.div`text-align:center;
-                                      `;
-export const PP = styled.p`text-align:center; position: absolute;
-margin: auto;
+export const PP = styled.p`
+margin-top: 10px;
 left: 0;
 right: 0;`;
+
+export const Button = styled.button`
+  animation-name:${KeyFrames2};
+  animation-duration: 16s;
+  animation-iteration-count:infinite;
+  color: white;
+  cursor: pointer;
+  font-size: 1em;
+  margin: 0.5em;
+  padding: 0.25em 1em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+`;
+export const Input = styled.input.attrs(props => ({
+  // we can define static props
+  type: props.type,
+
+}))`
+  animation-name:${KeyFrames};
+  animation-duration: 16s;
+  animation-iteration-count:infinite;
+  font-size: 1em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+  margin: 0.25em;
+`;
+export const BigImageWrap = styled.div` position: absolute;
+                                        display:flex;
+                                        flex-direction:column;
+                                        width: 100%;
+                                        left: 0px;
+                                        padding:10px 100px`;
+
                                     
                               
 
