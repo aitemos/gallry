@@ -23,6 +23,7 @@ export type Image = {
   readonly id: Scalars['ID'];
   readonly src: Scalars['String'];
   readonly text: Scalars['String'];
+  readonly user: Scalars['String'];
 };
 
 export enum Locale {
@@ -74,7 +75,7 @@ export type User = {
 export type ImagesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type ImagesQuery = { readonly __typename: 'Query', readonly images: ReadonlyArray<{ readonly __typename: 'Image', readonly id: string, readonly src: string, readonly text: string }> };
+export type ImagesQuery = { readonly __typename: 'Query', readonly images: ReadonlyArray<{ readonly __typename: 'Image', readonly id: string, readonly src: string, readonly text: string, readonly user: string }> };
 
 
 export const ImagesDocument = gql`
@@ -83,6 +84,7 @@ export const ImagesDocument = gql`
     id
     src
     text
+    user
   }
 }
     `;

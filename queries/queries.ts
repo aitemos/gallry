@@ -7,7 +7,7 @@ import { gql } from '@apollo/client';
 export const imagesQuery = gql`
     query images{
       images{
-      id, src, text
+      id, src, text,user
       }
     }
 `
